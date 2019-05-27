@@ -3,6 +3,10 @@ import Tournament from './tournament/';
 
 class Events extends Component {
 
+    componentDidMount () {
+        this.props.initEvents();  
+    }
+
     render() {
         return (
             <table>
