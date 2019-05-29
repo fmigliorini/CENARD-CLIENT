@@ -6,7 +6,8 @@ import Login from './components/login/';
 import Register from './components/register/';
 import Events from './components/events/';
 import Home from './components/home/';
-import Record from './components/medic/record';
+import Record from './components/medic/record/';
+import Stadistics from "./components/stadistics/";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/register/" component={Register} />
         <Route path="/events/" component={Events} />
         <Route path="/record/" component={Record} />
+        <Route path="/stadistics/" component={Stadistics} />
       </div>
     </Router>
   );
