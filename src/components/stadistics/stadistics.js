@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Tournament from "./tournament/";
+import ParticipantPerTournament from "./tournament/participantPerTournament/";
 
 class Stadistics extends Component {
   render() {
@@ -12,7 +13,7 @@ class Stadistics extends Component {
           </div>
           <div className="col-sm-6">
             <p className="text-center">Tournament 2</p>
-            <Tournament />
+            <ParticipantPerTournament />
           </div>
           <div className="col-sm-6">
             <p className="text-center">Tournament 3</p>

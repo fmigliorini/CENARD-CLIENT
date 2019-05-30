@@ -4,6 +4,8 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import 'bootstrap/dist/css/bootstrap.css';
+import 'jquery/dist/jquery.slim';
+import 'bootstrap/dist/js/bootstrap';
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";

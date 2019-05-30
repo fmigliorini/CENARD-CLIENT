@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-        {`PRODI`}
-      </a>
       <button
         className="navbar-toggler"
         type="button"
@@ -22,22 +19,34 @@ const Header = () => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/login/">About</Link>
+            <Link className="nav-link" to="/login/">
+              Ingresar
+            </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/register/">Users</Link>
+            <Link className="nav-link" to="/register/">
+              Registrarse
+            </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/events/">Events</Link>
+            <Link className="nav-link" to="/events/">
+              Eventos
+            </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/record/">Record</Link>
+            <Link className="nav-link" to="/record/">
+              Record
+            </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/stadistics/">Stadistics</Link>
+            <Link className="nav-link" to="/stadistics/">
+              Stadistics
+            </Link>
           </li>
         </ul>
       </div>
