@@ -1,0 +1,81 @@
+import React, { Component } from "react";
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis
+} from "recharts";
+
+class Tournament extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: [
+        {
+          subject: "Formosa",
+          A: 200,
+          B: 110,
+          fullMark: 200
+        },
+        {
+          subject: "Buenos Aires",
+          A: 98,
+          B: 130,
+          fullMark: 150
+        },
+        {
+          subject: "Cacho",
+          A: 86,
+          B: 130,
+          fullMark: 150
+        },
+        {
+          subject: "Tierra del fuego",
+          A: 99,
+          B: 100,
+          fullMark: 150
+        },
+        {
+          subject: "Physics",
+          A: 85,
+          B: 90,
+          fullMark: 150
+        },
+        {
+          subject: "History",
+          A: 65,
+          B: 85,
+          fullMark: 150
+        }
+      ]
+    };
+  }
+
+  render() {
+    return (
+      <RadarChart
+        cx={300}
+        cy={250}
+        outerRadius={150}
+        width={500}
+        height={500}
+        data={this.state.data}
+      >
+        <PolarGrid />
+        <PolarAngleAxis dataKey="subject" />
+        <PolarRadiusAxis />
+        <Radar
+          name="Mike"
+          dataKey="A"
+          stroke="#8884d8"
+          fill="#8884d8"
+          fillOpacity={0.6}
+        />
+      </RadarChart>
+    );
+  }
+}
+
+export default Tournament;
