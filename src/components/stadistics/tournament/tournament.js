@@ -14,25 +14,25 @@ class Tournament extends Component {
     this.state = {
       data: [
         {
-          subject: "Math",
-          A: 120,
+          subject: "Formosa",
+          A: 200,
           B: 110,
-          fullMark: 150
+          fullMark: 200
         },
         {
-          subject: "Chinese",
+          subject: "Buenos Aires",
           A: 98,
           B: 130,
           fullMark: 150
         },
         {
-          subject: "English",
+          subject: "Cacho",
           A: 86,
           B: 130,
           fullMark: 150
         },
         {
-          subject: "Geography",
+          subject: "Tierra del fuego",
           A: 99,
           B: 100,
           fullMark: 150
