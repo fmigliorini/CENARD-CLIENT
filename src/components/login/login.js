@@ -14,15 +14,25 @@ const Login = (props) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label {...label("email")}>Email</label>
-        <input {...email({ name: "email" })} required />
+    <br/>
+     <form>
+      
+      <div class="col jumbotron">
+      <div class="form-group">
+    <label for="Email">Email</label>
+    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Ingresar email" />
+      </div>
+      <div class="form-group">
+    <label for="Password">Contrase&ntilde;a</label>
+    <input type="password" class="form-control" id="Password" placeholder="Contrase&ntilde;a" />
+    </div>
+      
+      <div>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+      </div>
+    </div>
 
-        <label {...label("password")}>Password</label>
-        <input {...password("password")} required minLength="8" />
-
-        <button>Submit</button>
-      </form>
+    </form>
     </>
   );
 };

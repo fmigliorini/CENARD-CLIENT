@@ -17,14 +17,21 @@ class Events extends Component {
           id: 0,
           fechaInicio: '25/11/2019',
           fechaFin: '27/11/2019',
-          deporte: '100 Metros',
+          deporte: 'Pista',
           predio: 'Cenard'
         },
         {
           id: 2,
           fechaInicio: '28/11/2019',
           fechaFin: '30/11/2019',
-          deporte: '200 Metros',
+          deporte: 'Acuatico',
+          predio: 'Cenard'
+        }
+        ,{
+          id: 2,
+          fechaInicio: '28/11/2019',
+          fechaFin: '30/11/2019',
+          deporte: 'Pista/Campo',
           predio: 'Cenard'
         }
       ]

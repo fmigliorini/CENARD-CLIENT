@@ -24,13 +24,8 @@ const Header = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/login/">
-              Ingresar
-            </Link>
-          </li>
-          <li className="nav-item">
             <Link className="nav-link" to="/register/">
-              Registrarse
+              Nuevo Atleta
             </Link>
           </li>
           <li className="nav-item">
@@ -46,6 +41,16 @@ const Header = () => {
           <li className="nav-item">
             <Link className="nav-link" to="/stadistics/">
               Stadistics
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/portfolio/">
+              Portfolio
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/login/">
+              Login
             </Link>
           </li>
         </ul>

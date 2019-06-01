@@ -8,6 +8,7 @@ import Events from "./components/events/";
 import Home from "./components/home/";
 import Record from "./components/medic/record/";
 import Stadistics from "./components/stadistics/";
+import Portfolio from "./components/portfolio/";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/events/" component={Events} />
         <Route path="/record/" component={Record} />
         <Route path="/stadistics/" component={Stadistics} />
+        <Route path="/portfolio/" component={Portfolio} />
       </div>
     </Router>
   );
