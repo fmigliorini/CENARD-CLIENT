@@ -5,12 +5,14 @@ const singIn = id => {
 };
 
 const Tournament = props => {
-  const { id, name, cant } = props.data;
+  const { id, fechaInicio, fechaFin, deporte, predio } = props.data;
   return (
     <tr>
       <th scope="row">{id}</th>
-      <td>{name}</td>
-      <td>{cant}</td>
+      <td>{deporte}</td>
+      <td>{fechaInicio}</td>
+      <td>{fechaFin}</td>
+      <td>{predio}</td>
       <td>
         <button
           type="button"

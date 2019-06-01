@@ -14,9 +14,18 @@ class Events extends Component {
     this.setState({
       tournaments: [
         {
-          id: 1,
-          name: "CEDIN",
-          cant: 10
+          id: 0,
+          fechaInicio: '25/11/2019',
+          fechaFin: '27/11/2019',
+          deporte: '100 Metros',
+          predio: 'Cenard'
+        },
+        {
+          id: 2,
+          fechaInicio: '28/11/2019',
+          fechaFin: '30/11/2019',
+          deporte: '200 Metros',
+          predio: 'Cenard'
         }
       ]
     });
@@ -31,8 +40,10 @@ class Events extends Component {
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Cantidad Parcipantes</th>
+              <th scope="col">Deporte</th>
+              <th scope="col">Fecha inicio</th>
+              <th scope="col">Fecha fin</th>
+              <th scope="col">Predio</th>
               <th scope="col">Acciones</th>
             </tr>
           </thead>
