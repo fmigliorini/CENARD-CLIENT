@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis
-} from "recharts";
+import ParticipantPerTournament from "./participantPerTournament/";
+import ParticipantPerYear from './participantPerYear/';
 
 class Tournament extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       data: [
@@ -55,25 +50,16 @@ class Tournament extends Component {
 
   render() {
     return (
-      <RadarChart
-        cx={300}
-        cy={250}
-        outerRadius={150}
-        width={500}
-        height={500}
-        data={this.state.data}
-      >
-        <PolarGrid />
-        <PolarAngleAxis dataKey="subject" />
-        <PolarRadiusAxis />
-        <Radar
-          name="Mike"
-          dataKey="A"
-          stroke="#8884d8"
-          fill="#8884d8"
-          fillOpacity={0.6}
-        />
-      </RadarChart>
+      <>
+        <div className="row">
+          <div className="col-sm-6">
+            <ParticipantPerTournament />
+          </div>
+          <div className="col-sm-6">
+            <ParticipantPerYear />
+          </div>
+        </div>
+      </>
     );
   }
 }

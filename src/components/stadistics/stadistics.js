@@ -1,29 +1,62 @@
 import React, { Component } from "react";
 import Tournament from "./tournament/";
-import ParticipantPerTournament from "./tournament/participantPerTournament/";
-import ParticipantPerYear from './tournament/participantPerYear/';
+import ChallengerClasification from "./challengerClasification/";
 
 class Stadistics extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      type: "tournament"
+    };
+    this.changeStadistic.bind(this);
+  }
+
+  changeStadistic(type) {
+    this.setState({
+      type
+    });
+  }
+
+  getStadisticComponent(type) {
+    switch (type) {
+      case "tournament":
+        return <Tournament />;
+      case "personal":
+        return <ChallengerClasification />;
+      default:
+        return null;
+    }
+  }
+
   render() {
+    const { type } = this.state;
+
     return (
       <>
-        <div className="row" >
-          <div className="col-sm-6">
-            <p className="text-center">Tournament 1</p>
-            <Tournament />
+        <div className="container">
+          <div className="row">
+            <div className="buttons">
+              <button
+                type="button"
+                className="btn btn-primary btn-lg"
+                onClick={() => {
+                  this.changeStadistic("tournament");
+                }}
+              >
+                Torneo
+              </button>
+              <button
+                type="button"
+                className="btn btn-primary btn-lg"
+                onClick={() => {
+                  this.changeStadistic("personal");
+                }}
+              >
+                Personal
+              </button>
+            </div>
           </div>
-          <div className="col-sm-6">
-            <p className="text-center">Tournament 2</p>
-            <ParticipantPerTournament />
-          </div>
-          <div className="col-sm-6">
-            <p className="text-center">Tournament 3</p>
-            <ParticipantPerYear />
-          </div>
-          <div className="col-sm-6">
-            <p className="text-center">Tournament 4</p>
-            <Tournament />
-          </div>
+          {this.getStadisticComponent(type)}
         </div>
       </>
     );
