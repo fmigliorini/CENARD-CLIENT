@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const Tournament = () => {
-    return (
-        <tr>
-            <td>{ `sarasa` }</td>
-        </tr>
-    );
+const Tournament = props => {
+  const { id, name, cant } = props.data;
+  return (
+    <tr>
+      <th scope="row">{id}</th>
+      <td>{name}</td>
+      <td>{cant}</td>
+    </tr>
+  );
 };
 
 export default Tournament;
