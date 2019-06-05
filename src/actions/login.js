@@ -1,8 +1,8 @@
-import { LOGIN_SUBMIT_WATCHER } from '../constants/actionTypes';
+import { SING_IN_WATCHER } from '../constants/actionTypes';
 
 export const loginAction = () => {
     return {
-        type: LOGIN_SUBMIT_WATCHER,
+        type: SING_IN_WATCHER,
     };
 }
 

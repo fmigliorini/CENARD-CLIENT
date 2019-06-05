@@ -1,5 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { connect } from 'react-redux';
+import { PrivateRoute } from "./helper/privateRouter";
+
 import "./App.css";
 import Header from "./components/header/";
 import Login from "./components/login/";
@@ -9,22 +12,31 @@ import Home from "./components/home/";
 import Record from "./components/medic/record/";
 import Stadistics from "./components/stadistics/";
 
-const App = () => {
-  return (
-    <Router>
-      <div className="container-fluid">
-        <Header />
-      </div>
-      <div className="container">
-        <Route path="/" exact component={Home} />
-        <Route path="/login/" component={Login} />
-        <Route path="/register/" component={Register} />
-        <Route path="/events/" component={Events} />
-        <Route path="/record/" component={Record} />
-        <Route path="/stadistics/" component={Stadistics} />
-      </div>
-    </Router>
-  );
-};
+class App extends Component {
+  
+  render() {
+    return (
+      <Router>
+        <div className="container-fluid">
+          <Header />
+        </div>
+        <div className="container">
+          <Route path="/" exact component={Home} />
+          <Route path="/login/" component={Login} />
+          <Route path="/register/" component={Register} />
+          <PrivateRoute authed={this.props.authenticate} path="/events/" component={Events} />
+          <PrivateRoute authed={this.props.authenticate} path="/record/" component={Record} />
+          <PrivateRoute authed={this.props.authenticate} path="/stadistics/" component={Stadistics} />
+        </div>
+      </Router>
+    );
+  }
 
-export default App;
+}
+
+const mapStateToProps = state => ({
+  authenticate: state.auth.authenticate,
+  rol: state.auth.rol,
+});
+
+export default connect(mapStateToProps)(App);
