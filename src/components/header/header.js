@@ -1,9 +1,23 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { ADMIN, DEPORTIST, CLASIFICADOR } from "../../constants/roles";
+import DeportistMenu from "./byRole/deportistMenu";
+import AdminMenu from "./byRole/adminMenu";
+import ClasificatorMenu from "./byRole/clasificatorMenu";
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
+
+  getMenuByRole(role) {
+    switch (role) {
+      case ADMIN:
+        return <AdminMenu />;
+      case DEPORTIST:
+        return <DeportistMenu />;
+      case CLASIFICADOR:
+        return <ClasificatorMenu />;
+      default:
+        return null;
+    }
   }
 
   render() {
@@ -40,25 +54,7 @@ class Header extends Component {
               </Link>
             </li>
 
-            {!this.props.isAuth ? null : (
-              <>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/events/">
-                    Eventos
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/record/">
-                    Record
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/stadistics/">
-                    Stadistics
-                  </Link>
-                </li>
-              </>
-            )}
+            {!this.props.isAuth ? null : this.getMenuByRole(this.props.rol)}
           </ul>
         </div>
       </nav>
