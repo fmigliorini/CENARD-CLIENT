@@ -4,8 +4,8 @@ import {
 } from '../constants/actionTypes';
 
 const initialState = {
-    authenticate : true,
-    rol: 'clasificador',
+    authenticate : false,
+    rol: null,
     token : null,
 };
 
