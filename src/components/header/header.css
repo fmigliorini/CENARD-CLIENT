@@ -1,0 +1,20 @@
+.header-container {
+    padding: 0;
+}
+
+.navbar {
+    margin-bottom: 50px;
+    background: #404996;
+}
+
+.nav-link {
+    color: #ffffff;
+}
+
+.nav-link:visited {
+    color: #ffffff;
+}
+.nav-link:hover, a:active, a:focus {
+    color:#ffffff;
+}
+  
