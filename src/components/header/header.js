@@ -52,12 +52,6 @@ class Header extends Component {
                   Ingresar
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/register/">
-                  Registrarse
-                </Link>
-              </li>
-
               {!this.props.isAuth ? null : this.getMenuByRole(this.props.rol)}
             </ul>
           </div>

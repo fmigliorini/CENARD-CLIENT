@@ -3,7 +3,6 @@
 }
 
 .navbar {
-    margin-bottom: 50px;
     background: #404996;
 }
 
@@ -14,6 +13,7 @@
 .nav-link:visited {
     color: #ffffff;
 }
+
 .nav-link:hover, a:active, a:focus {
     color:#ffffff;
 }

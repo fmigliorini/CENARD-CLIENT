@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <Router>
         <Header />
-        <div className="container">
+        <div className="body-container container-fluid">
           <Route path="/" exact component={Home} />
           <Route path="/login/" component={Login} />
           <Route path="/register/" component={Register} />

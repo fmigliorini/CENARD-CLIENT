@@ -32,6 +32,13 @@
   }
 }
 
+.body-container {
+  padding-top: 50px;
+  height: calc(100vh - 86px);
+  width: 100%;
+  background-image: url('http://localhost:3000/img/fondo.png');
+  background-size: cover;
+}
 
 .buttons {
   display:flex;
