@@ -9,7 +9,7 @@ export const loginAction = payload => {
 };
 
 export const login = (username, password) => {
-  axios
+  return axios
     .post("/authenticate", {
       username,
       password
