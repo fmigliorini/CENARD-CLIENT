@@ -7,3 +7,6 @@ export const SING_IN_WATCHER = "@login/submit_watcher";
 export const SING_IN = "@login/submit";
 export const SING_OUT = "@login/logout";
 
+export const STADISTICS_USER_GET_WATCHER = "@stadistics/user_get_watcher";
+export const STADISTICS_USER_GET = "@stadistics/user_get";
+
