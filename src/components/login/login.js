@@ -11,14 +11,19 @@ class Login extends Component {
       userName: "",
       password: ""
     };
-    this.handleSubmit.bind(this);
-    this.handleUsername.bind(this);
-    this.handlePassword.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUsername = this.handleUsername.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
+    this.props.singIn(
+      {
+        username: this.state.username,
+        password: this.state.password,
+      }
+    );
   }
 
   handleUsername(event) {
@@ -78,9 +83,8 @@ class Login extends Component {
 }
 
 const mapDispatchToPros = dispatch => ({
-  singIn: () => {
-    console.log(loginAction());
-    dispatch(loginAction());
+  singIn: (payload) => {
+    dispatch(loginAction(payload));
   }
 });
 

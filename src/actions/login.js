@@ -1,8 +1,23 @@
-import { SING_IN_WATCHER } from '../constants/actionTypes';
+import { SING_IN_WATCHER } from "../constants/actionTypes";
+import axios from "axios";
 
-export const loginAction = () => {
-    return {
-        type: SING_IN_WATCHER,
-    };
-}
+export const loginAction = payload => {
+  return {
+    type: SING_IN_WATCHER,
+    payload
+  };
+};
 
+export const login = (username, password) => {
+  axios
+    .post("/authenticate", {
+      username,
+      password
+    })
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+};
