@@ -16,8 +16,18 @@ const AdminMenu = () => {
         </Link>
       </li>
       <li>
-        <Link className="nav-link" to="/register/">
-          Registrarse
+        <Link className="nav-link" to="/list_clasificador/">
+          Lista Clasificadores
+        </Link>
+      </li>
+      <li>
+        <Link className="nav-link" to="/new_clasificador/">
+          Nuevo Clasificador
+        </Link>
+      </li>
+      <li>
+        <Link className="nav-link" to="/list_deportistas/">
+          Lista Deportistas
         </Link>
       </li>
     </>

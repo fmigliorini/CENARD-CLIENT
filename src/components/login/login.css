@@ -1,6 +1,22 @@
 .body-container {
-    background-image: url('http://localhost:3000/img/fondo.png');
-    background-size: cover;  
+    position: center;
+    background-size:100% 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.651)), color-stop(85%, rgba(22, 22, 22, 0.918)), to(#161616)), url("http://localhost:3000/img/fondo.png");
+    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.664) 0%, rgba(22, 22, 22, 0.925) 85%, #161616 100%), url("http://localhost:3000/img/fondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+h2 {
+  font-family: 'Nunito';
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.2rem;
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.726), rgba(255, 255, 255, 0.9));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .card {

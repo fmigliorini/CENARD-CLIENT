@@ -12,6 +12,10 @@ import Home from "./components/home/";
 import Record from "./components/medic/record/";
 import Stadistics from "./components/stadistics/";
 import Portfolio from "./components/portfolio/";
+import new_deportista from "./components/new_deportista/";
+import list_deportista from "./components/list_deportista/";
+import new_clasificador from "./components/new_clasificador/";
+import list_clasificador from "./components/list_clasificador/";
 
 class App extends Component {
   
@@ -27,6 +31,10 @@ class App extends Component {
           <PrivateRoute authed={this.props.authenticate} path="/record/" component={Record} />
           <PrivateRoute authed={this.props.authenticate} path="/stadistics/" component={Stadistics} />
           <PrivateRoute authed={this.props.authenticate} path="/portfolio/" component={Portfolio} />
+          <PrivateRoute authed={this.props.authenticate} path="/new_deportista/" component={new_deportista} />
+          <PrivateRoute authed={this.props.authenticate} path="/list_deportista/" component={list_deportista} />
+          <PrivateRoute authed={this.props.authenticate} path="/new_clasificador/" component={new_clasificador} />
+          <PrivateRoute authed={this.props.authenticate} path="/list_clasificador/" component={list_clasificador} />
         </div>
       </Router>
     );
