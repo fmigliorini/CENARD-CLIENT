@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { throwStatement } from "@babel/types";
 
 class ChallengerClasification extends Component {
   constructor(props) {

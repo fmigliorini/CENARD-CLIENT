@@ -4,7 +4,7 @@ export const saveUser = (user) => {
 }
 
 // Search user in local storage
-export const getUser = () => {
+export const getUserStorage = () => {
     const user = JSON.parse(localStorage.getItem('user'));
     if( user ) {
         return user;
@@ -18,7 +18,7 @@ export const saveToken = (token) => {
     localStorage.setItem('token', token);
 }
 
-export const getToken = () => {
+export const getTokenStorage = () => {
     const token = JSON.parse(localStorage.getItem('token'));
     if( token ) {
         return token;

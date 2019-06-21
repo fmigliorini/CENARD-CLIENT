@@ -36,7 +36,7 @@ class Header extends Component {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <a class="navbar-brand" href="#">
+          <a className="navbar-brand" href="#">
             <img src="/img/prodi_logo.png" width="60" height="60" alt="" />
           </a>
 

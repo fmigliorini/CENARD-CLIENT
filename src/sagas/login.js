@@ -8,9 +8,10 @@ import {
 
 import { login, getUserLogged, logOutAction } from "../actions/login";
 
-import { saveUser, saveToken } from "../helper/localStorageUser";
+import { saveUser, saveToken, getUserStorage } from "../helper/localStorageUser";
 
 export function* loginSagas(payload) {
+  console.log('here');
   const res = yield call(login(payload.email, payload.password));
 
   if (!res) {
@@ -20,18 +21,15 @@ export function* loginSagas(payload) {
   saveToken(res.data.token);
   saveUser(res.data.userId);
   
-  yield getUser();
-
 }
 
 export function* getUser() {
-
-  const userId = getUser();
+  const userId = getUserStorage();
   if( userId === null ){
      yield put(logOutAction());
   } else {
+    const res = yield call(getUserLogged, userId);
 
-    const res = yield call(getUserLogged(getUser()));
     if (res) {
       yield put({ type: SING_IN, payload: res.data });
     } else {

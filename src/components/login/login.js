@@ -40,36 +40,36 @@ class Login extends Component {
   render() {
     return (
       <>
-        <div class="d-flex justify-content-center h-100">
-          <div class="card">
-            <div class="card-header">
+        <div className="d-flex justify-content-center h-100">
+          <div className="card">
+            <div className="card-header">
               <h3> {`Ingresar`} </h3>
             </div>
-            <div class="card-body">
+            <div className="card-body">
               <form onSubmit={this.handleSubmit}>
-                <div class="input-group form-group">
+                <div className="input-group form-group">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Email"
                     value={this.state.email}
                     onChange={this.handleEmail}
                   />
                 </div>
-                <div class="input-group form-group">
+                <div className="input-group form-group">
                   <input
                     type="password"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Clave"
                     value={this.state.password}
                     onChange={this.handlePassword}
                   />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <input
                     type="submit"
                     value="Ingresar"
-                    class="btn float-right login_btn"
+                    className="btn float-right login_btn"
                   />
                 </div>
               </form>

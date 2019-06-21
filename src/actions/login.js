@@ -1,7 +1,7 @@
 import {
   SING_IN_WATCHER,
   GET_USER_WATCHER,
-  SING_OUT_WATCHER
+  SING_OUT
 } from "../constants/actionTypes";
 import Api from "../helper/axiosInterceptors";
 
@@ -32,17 +32,18 @@ export const getUserLoggedAction = userId => {
 };
 
 export const getUserLogged = userId => {
+  console.log('asdasd');
   return Api.post("/usuario/" + userId)
     .then(function(response) {
       console.log(response);
     })
     .catch(function(error) {
-      console.log("error", error);
+      console.log("error-message", error);
     });
 };
 
 export const logOutAction = () => {
   return {
-    type: SING_OUT_WATCHER
+    type: SING_OUT
   };
 };

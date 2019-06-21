@@ -13,7 +13,6 @@ import Record from "./components/medic/record/";
 import Stadistics from "./components/stadistics/";
 import Portfolio from "./components/portfolio/";
 
-import { getUser, getToken } from "./helper/localStorageUser";
 import { getUserLoggedAction, logOutAction } from "./actions/login";
 
 class App extends Component {
