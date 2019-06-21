@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loginAction } from "../../actions/login";
-import { useFormState } from "react-use-form-state";
 import "./login.css";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: "",
+      email: "",
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleUsername = this.handleUsername.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
   }
 
@@ -20,15 +19,15 @@ class Login extends Component {
     e.preventDefault();
     this.props.singIn(
       {
-        username: this.state.username,
+        email: this.state.email,
         password: this.state.password,
       }
     );
   }
 
-  handleUsername(event) {
+  handleEmail(event) {
     this.setState({
-      userName: event.target.value
+      email: event.target.value
     });
   }
 
@@ -52,9 +51,9 @@ class Login extends Component {
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="Usuario"
-                    value={this.state.username}
-                    onChange={this.handleUsername}
+                    placeholder="Email"
+                    value={this.state.email}
+                    onChange={this.handleEmail}
                   />
                 </div>
                 <div class="input-group form-group">

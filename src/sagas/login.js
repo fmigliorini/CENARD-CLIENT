@@ -11,7 +11,7 @@ import { login, getUserLogged, logOutAction } from "../actions/login";
 import { saveUser, saveToken } from "../helper/localStorageUser";
 
 export function* loginSagas(payload) {
-  const res = yield call(login(payload.username, payload.password));
+  const res = yield call(login(payload.email, payload.password));
 
   if (!res) {
     yield put(logOutAction());
