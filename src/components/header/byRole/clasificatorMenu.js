@@ -5,13 +5,8 @@ const ClasificatorMenu = () => {
   return (
     <>
       <li className="nav-item">
-        <Link className="nav-link" to="/events/">
-          Eventos
-        </Link>
-      </li>
-      <li className="nav-item">
         <Link className="nav-link" to="/record/">
-          Record
+          Clasificar
         </Link>
       </li>
     </>

@@ -17,7 +17,7 @@ const AdminMenu = () => {
       </li>
       <li>
         <Link className="nav-link" to="/register/">
-          Registrarse
+          Registrar Deportista
         </Link>
       </li>
     </>
