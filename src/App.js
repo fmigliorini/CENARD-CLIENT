@@ -19,13 +19,7 @@ import { getUserLoggedAction, logOutAction } from "./actions/login";
 class App extends Component {
   componentDidMount() {
     // isLoggedIn??
-    const user = getUser();
-    const token = getToken();
-    if (user && token) {
-      this.props.tryLogin(user, token);
-    } else {
-      this.props.logout();
-    }
+      this.props.tryLogin();
   }
 
   render() {
