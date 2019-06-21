@@ -20,7 +20,7 @@ const test = {
     contraseña:"1234",
     direccion:"Direccion",
     fechaNacimiento:"1990-01-12T00:00:00",
-    rol:'clasificador',
+    rol:'deportista',
     idNacionalidad:4,
     idTipoDoc:1,
     idGenero:2,

@@ -17,7 +17,7 @@ export function* getEventsSagas() {
 export function* getEventsByUserSagas(userId) {
   const res = yield call(getEventsByUser, userId);
   console.log("getAllEvents", res);
-  yield put({ type: GET_EVENT, payload: res.data });
+  yield put({ type: GET_EVENTS_BY_USER, payload: res.data });
 }
 
 export default function* eventSaga() {

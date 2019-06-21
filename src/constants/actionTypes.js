@@ -19,6 +19,8 @@ export const GET_EVENTS_BY_USER_WATCHER = "@ev/get_events_by_user_watcher";
 export const GET_EVENTS_BY_USER = "@ev/get_events_by_user";
 
 
-export const STADISTICS_USER_GET_WATCHER = "@stadistics/user_get_watcher";
-export const STADISTICS_USER_GET = "@stadistics/user_get";
+export const STADISTICS_USER_GET_WATCHER = "@stadistics/stadistic_user_get_watcher";
+export const STADISTICS_USER_GET = "@stadistics/stadistic_user_get";
 
+export const STADISTICS_TOURNAMENT_GET_WATCHER = "@stadistics/stadistic_tournament_user_get_watcher";
+export const STADISTICS_TOURNAMENT_GET = "@stadistics/stadistic_tournament_user_get";

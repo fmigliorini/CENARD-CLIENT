@@ -3,13 +3,13 @@ import {
 } from '../constants/actionTypes';
 
 const initialState = {
-    'items' : [],
+    'itemsUser' : [],
+    'itemsTournament' : [],
 };
 
 export default (state = initialState, action) => {
     switch(action.type) {
         case GET_EVENT:
-            console.log("reducer LOGIN_SUBMIT");
             return {
                 ...state,
                 items: action.payload,

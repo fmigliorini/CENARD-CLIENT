@@ -22,7 +22,7 @@ class Events extends Component {
           predio: "Cenard"
         },
         {
-          id: 2,
+          id: 1,
           fechaInicio: "28/11/2019",
           fechaFin: "30/11/2019",
           deporte: "Acuatico",
@@ -57,10 +57,10 @@ class Events extends Component {
             </tr>
           </thead>
           <tbody>
-            {tournaments.map(tournament => {
+            {tournaments && tournaments.map(tournament => {
               return <Tournament key={tournament.id} data={tournament} />;
             })}
-            {list.map(tournament => {
+            {list && list.map(tournament => {
               return <Tournament key={tournament.id} data={tournament} />;
             })}
           </tbody>
