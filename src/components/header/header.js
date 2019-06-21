@@ -4,8 +4,7 @@ import { ADMIN, DEPORTIST, CLASIFICADOR } from "../../constants/roles";
 import DeportistMenu from "./byRole/deportistMenu";
 import AdminMenu from "./byRole/adminMenu";
 import ClasificatorMenu from "./byRole/clasificatorMenu";
-import './header.css';
-
+import "./header.css";
 
 class Header extends Component {
   getMenuByRole(role) {
@@ -43,19 +42,31 @@ class Header extends Component {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <Link className="nav-link" to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/login/">
-                  Ingresar
-                </Link>
-              </li>
+              {!this.props.isAuth && (
+                <>
+                  <li className="nav-item active">
+                    <Link className="nav-link" to="/">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/login/">
+                      Ingresar
+                    </Link>
+                  </li>
+                </>
+              )}
               {!this.props.isAuth ? null : this.getMenuByRole(this.props.rol)}
             </ul>
           </div>
+          {this.props.isAuth && (
+            <div className="form-inline">
+              {this.props.name}
+              <button className="btn" type="submit">
+                Cerrar session
+              </button>
+            </div>
+          )}
         </nav>
       </div>
     );

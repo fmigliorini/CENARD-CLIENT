@@ -13,7 +13,7 @@ const initialState = {
 const test = {
     authenticate : true,
     id:6,
-    nombre:"Erika",
+    name:"Erika",
     apellido:"Romanczuk",
     numeroDoc:"37481033",
     email:"erikaromanczuk@gmail.com",
