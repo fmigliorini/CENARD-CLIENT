@@ -34,6 +34,8 @@ export function* getUser() {
     const res = yield call(getUserLogged(getUser()));
     if (res) {
       yield put({ type: SING_IN, payload: res.data });
+    } else {
+      yield put(logOutAction());
     }
   }
 }
