@@ -5,8 +5,10 @@ import {
 
 const initialState = {
     authenticate : false,
+    id: null,
     rol: null,
-    token : null,
+    email: null,
+    name: null,
 };
 
 export default (state = initialState, action) => {
@@ -14,14 +16,12 @@ export default (state = initialState, action) => {
         case SING_IN:
             return {
                 ...state,
-                token: action.payload.token,
                 rol: action.payload.rol,
                 authenticate: true,
             }
         case SING_OUT:
             return {
                 ...state,
-                token: null,
                 rol: null,
                 authenticate: false,
             }

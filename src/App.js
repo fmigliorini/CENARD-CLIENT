@@ -13,7 +13,19 @@ import Record from "./components/medic/record/";
 import Stadistics from "./components/stadistics/";
 import Portfolio from "./components/portfolio/";
 
+import { getUser, getToken } from './helper/localStorageUser';
+
 class App extends Component {
+  
+  componentDidMount() {
+    // isLoggedIn??
+    const user = getUser();
+    const token = getToken();
+    if (user && token ) {
+      // Verify if i'm logged in? 
+      
+    }
+  }
   
   render() {
     return (

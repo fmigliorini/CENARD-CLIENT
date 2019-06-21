@@ -1,10 +1,10 @@
 import { all, put, call, takeLatest } from "redux-saga/effects";
 
 import { GET_EVENT, GET_EVENT_WATCHER } from "../constants/actionTypes";
-import { getAllEvents } from '../actions/event';
+import { getActiveEvents } from '../actions/event';
 
 export function* getEvents() {
-  const res = yield call(getAllEvents());
+  const res = yield call(getActiveEvents());
   console.log("getAllEvents", res );
   yield put({ type: GET_EVENT, payload: res.data });
 }
