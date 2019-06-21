@@ -19,14 +19,22 @@ export function* loginSagas(payload) {
 
   saveToken(res.data.token);
   saveUser(res.data.userId);
-  yield getUser({ userId: getUser() });
+  
+  yield getUser();
 
 }
 
-export function* getUser(payload) {
-  const res = yield call(getUserLogged(payload.userId));
-  if (res) {
-    yield put({ type: SING_IN, payload: res.data });
+export function* getUser() {
+
+  const userId = getUser();
+  if( userId === null ){
+     yield put(logOutAction());
+  } else {
+
+    const res = yield call(getUserLogged(getUser()));
+    if (res) {
+      yield put({ type: SING_IN, payload: res.data });
+    }
   }
 }
 
