@@ -8,25 +8,40 @@ import {
 
 import { login, getUserLogged, logOutAction } from "../actions/login";
 
-import { saveUser, saveToken, getUserStorage } from "../helper/localStorageUser";
+import {
+  saveUser,
+  saveToken,
+  getUserStorage
+} from "../helper/localStorageUser";
 
 export function* loginSagas(payload) {
-  console.log('here');
-  const res = yield call(login(payload.email, payload.password));
+  console.log("here");
+  let res = yield call(login, {
+    email: payload.email,
+    password: payload.password
+  });
+
+  res = {
+    data: {
+      token: 'tokensarasa',
+      idUser: '6',
+    }
+  };
 
   if (!res) {
-    yield put(logOutAction());
+    return yield put(logOutAction());
   }
 
   saveToken(res.data.token);
-  saveUser(res.data.userId);
-  
+  saveUser(res.data.idUser);
+
+  yield getUser();
 }
 
 export function* getUser() {
   const userId = getUserStorage();
-  if( userId === null ){
-     yield put(logOutAction());
+  if (userId === null) {
+    yield put(logOutAction());
   } else {
     const res = yield call(getUserLogged, userId);
 

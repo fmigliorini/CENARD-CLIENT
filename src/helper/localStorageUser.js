@@ -1,12 +1,12 @@
 
-export const saveUser = (user) => {
-    localStorage.setItem('user', JSON.stringify(user));
+export const saveUser = (idUser) => {
+    localStorage.setItem('user', idUser);
 }
 
 // Search user in local storage
 export const getUserStorage = () => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if( user ) {
+    const user = localStorage.getItem('user');
+    if( user !== 'undefined' ) {
         return user;
     }
 
@@ -19,7 +19,7 @@ export const saveToken = (token) => {
 }
 
 export const getTokenStorage = () => {
-    const token = JSON.parse(localStorage.getItem('token'));
+    const token = localStorage.getItem('token');
     if( token ) {
         return token;
     }

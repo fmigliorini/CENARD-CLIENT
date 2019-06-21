@@ -66,8 +66,8 @@ export default class Api {
       ? context.httpMethod.toUpperCase()
       : "GET";
 
-    const endpoint = "http://localhost:3000/" + context.route;
-    console.log(endpoint);
+    const endpoint = "http://localhost:3000" + context.route;
+
     const ajaxOpts = {
       method: httpMethod,
       url: endpoint,
