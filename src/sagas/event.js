@@ -8,7 +8,7 @@ import {
 } from "../constants/actionTypes";
 import { getActiveEvents, getEventsByUser } from "../actions/event";
 
-export function* getEvents() {
+export function* getEventsSagas() {
   const res = yield call(getActiveEvents);
   console.log("getAllEvents", res);
   yield put({ type: GET_EVENT, payload: res.data });
@@ -22,7 +22,7 @@ export function* getEventsByUserSagas(userId) {
 
 export default function* eventSaga() {
   yield all([
-    takeLatest(GET_EVENT_WATCHER, getEvents),
+    takeLatest(GET_EVENT_WATCHER, getEventsSagas),
     takeLatest(GET_EVENTS_BY_USER_WATCHER, getEventsByUserSagas)
   ]);
 }
