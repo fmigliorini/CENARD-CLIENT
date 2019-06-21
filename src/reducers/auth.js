@@ -16,13 +16,19 @@ export default (state = initialState, action) => {
         case SING_IN:
             return {
                 ...state,
-                rol: action.payload.rol,
                 authenticate: true,
+                id: action.payload.id,
+                rol: action.payload.rol,
+                email: action.payload.email,
+                name: action.payload.name
             }
         case SING_OUT:
             return {
                 ...state,
+                id: null,
                 rol: null,
+                email: null,
+                name: null,
                 authenticate: false,
             }
         default:

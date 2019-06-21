@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { PrivateRoute } from "./helper/privateRouter";
 
 import "./App.css";
@@ -13,20 +13,21 @@ import Record from "./components/medic/record/";
 import Stadistics from "./components/stadistics/";
 import Portfolio from "./components/portfolio/";
 
-import { getUser, getToken } from './helper/localStorageUser';
+import { getUser, getToken } from "./helper/localStorageUser";
+import { getUserLoggedAction, logOutAction } from "./actions/login";
 
 class App extends Component {
-  
   componentDidMount() {
     // isLoggedIn??
     const user = getUser();
     const token = getToken();
-    if (user && token ) {
-      // Verify if i'm logged in? 
-      
+    if (user && token) {
+      this.props.tryLogin(user, token);
+    } else {
+      this.props.logout();
     }
   }
-  
+
   render() {
     return (
       <Router>
@@ -35,26 +36,47 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/login/" component={Login} />
           <Route path="/register/" component={Register} />
-          <PrivateRoute authed={this.props.authenticate} path="/events/" component={Events} />
-          <PrivateRoute authed={this.props.authenticate} path="/record/" component={Record} />
-          <PrivateRoute authed={this.props.authenticate} path="/stadistics/" component={Stadistics} />
-          <PrivateRoute authed={this.props.authenticate} path="/portfolio/" component={Portfolio} />
+          <PrivateRoute
+            authed={this.props.authenticate}
+            path="/events/"
+            component={Events}
+          />
+          <PrivateRoute
+            authed={this.props.authenticate}
+            path="/record/"
+            component={Record}
+          />
+          <PrivateRoute
+            authed={this.props.authenticate}
+            path="/stadistics/"
+            component={Stadistics}
+          />
+          <PrivateRoute
+            authed={this.props.authenticate}
+            path="/portfolio/"
+            component={Portfolio}
+          />
         </div>
       </Router>
     );
   }
-
 }
 
 const mapStateToProps = state => ({
   authenticate: state.auth.authenticate,
-  rol: state.auth.rol,
+  rol: state.auth.rol
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToPros = dispatch => ({
+  logout: payload => {
+    dispatch(logOutAction(payload));
+  },
+  tryLogin: () => {
+    dispatch(getUserLoggedAction());
+  }
+});
 
-
-
-
-
-
+export default connect(
+  mapStateToProps,
+  mapDispatchToPros
+)(App);

@@ -74,15 +74,6 @@ export default class Api {
         switch (httpMethod) {
             case "POST":
                 ajaxOpts.data = data;
-                ajaxOpts.transformRequest = function(obj) {
-                    let str = [];
-                    for(let p in obj) {
-                        if (obj.hasOwnProperty(p)) {
-                            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-                        }
-                    }
-                    return str.join("&");
-                };
                 ajaxOpts.headers["Content-Type"] = "application/x-www-form-urlencoded";
                 break;
             case "GET":

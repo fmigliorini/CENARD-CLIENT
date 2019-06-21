@@ -1,7 +1,7 @@
 import { all, put, call, takeLatest } from "redux-saga/effects";
 
 import { SING_IN_WATCHER, SING_IN } from "../constants/actionTypes";
-import { login } from "../actions/login";
+import { login, getUserLogged } from "../actions/login";
 
 export function* loginSagas(payload) {
   
@@ -9,6 +9,13 @@ export function* loginSagas(payload) {
 
   if (res) {
     yield put({ type: SING_IN, payload: { token: res.data.token, rol: res.data.rol } });
+  }
+}
+
+export function* getUser(payload) {
+  const res = yield call(getUserLogged(payload.userId));
+  if( res ) {
+    yield put({ type: SING_IN, payload: { } });
   }
 }
 
