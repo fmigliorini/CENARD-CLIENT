@@ -1,7 +1,5 @@
 import { all, put, call, takeLatest } from "redux-saga/effects";
 
-import axios from "axios";
-
 import {
   STADISTICS_USER_GET_WATCHER,
   STADISTICS_USER_GET,

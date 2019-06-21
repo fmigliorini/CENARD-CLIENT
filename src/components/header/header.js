@@ -61,8 +61,14 @@ class Header extends Component {
           </div>
           {this.props.isAuth && (
             <div className="form-inline">
-              {this.props.name}
-              <button className="btn" type="submit">
+              <span className="display-name">{this.props.name}</span>
+              <button
+                className="btn btn-info"
+                type="submit"
+                onClick={() => {
+                  this.props.logOut();
+                }}
+              >
                 Cerrar session
               </button>
             </div>

@@ -18,3 +18,10 @@
     color:#ffffff;
 }
   
+.form-inline {
+    color: white;
+}
+
+.display-name {
+    margin-right: 20px;
+}
