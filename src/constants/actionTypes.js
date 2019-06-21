@@ -12,6 +12,13 @@ export const SING_OUT = "@login/sing_out";
 export const GET_USER_WATCHER = "@login/get_user_watcher";
 export const GET_USER = "@login/get_user";
 
+export const GET_EVENTS_WATCHER = "@ev/get_events_watcher";
+export const GET_EVENTS = "@ev/get_events";
+
+export const GET_EVENTS_BY_USER_WATCHER = "@ev/get_events_by_user_watcher";
+export const GET_EVENTS_BY_USER = "@ev/get_events_by_user";
+
+
 export const STADISTICS_USER_GET_WATCHER = "@stadistics/user_get_watcher";
 export const STADISTICS_USER_GET = "@stadistics/user_get";
 

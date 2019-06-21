@@ -11,28 +11,29 @@ class Events extends Component {
   }
 
   componentDidMount() {
+    // this.props.initEvents();
     this.setState({
       tournaments: [
         {
           id: 0,
-          fechaInicio: '25/11/2019',
-          fechaFin: '27/11/2019',
-          deporte: 'Pista',
-          predio: 'Cenard'
+          fechaInicio: "25/11/2019",
+          fechaFin: "27/11/2019",
+          deporte: "Pista",
+          predio: "Cenard"
         },
         {
           id: 2,
-          fechaInicio: '28/11/2019',
-          fechaFin: '30/11/2019',
-          deporte: 'Acuatico',
-          predio: 'Cenard'
-        }
-        ,{
+          fechaInicio: "28/11/2019",
+          fechaFin: "30/11/2019",
+          deporte: "Acuatico",
+          predio: "Cenard"
+        },
+        {
           id: 2,
-          fechaInicio: '28/11/2019',
-          fechaFin: '30/11/2019',
-          deporte: 'Pista/Campo',
-          predio: 'Cenard'
+          fechaInicio: "28/11/2019",
+          fechaFin: "30/11/2019",
+          deporte: "Pista/Campo",
+          predio: "Cenard"
         }
       ]
     });
@@ -40,6 +41,7 @@ class Events extends Component {
 
   render() {
     const { tournaments } = this.state;
+    const { list } = this.props;
     return (
       <>
         <h2 className="text-center">Torneos</h2>
@@ -56,6 +58,9 @@ class Events extends Component {
           </thead>
           <tbody>
             {tournaments.map(tournament => {
+              return <Tournament key={tournament.id} data={tournament} />;
+            })}
+            {list.map(tournament => {
               return <Tournament key={tournament.id} data={tournament} />;
             })}
           </tbody>

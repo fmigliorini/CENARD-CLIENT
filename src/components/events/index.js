@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Event from "./event";
-import { getEvents } from "../../actions/event";
+import { getEventsAction } from "../../actions/event";
 
 const mapStateToProps = state => {
   return {
@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToPros = dispatch => ({
   initEvents: () => {
-    dispatch(getEvents());
+    dispatch(getEventsAction());
   }
 });
 

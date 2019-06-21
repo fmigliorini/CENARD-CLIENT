@@ -10,8 +10,24 @@ const initialState = {
     email: null,
     name: null,
 };
+const test = {
+    authenticate : true,
+    id:6,
+    nombre:"Erika",
+    apellido:"Romanczuk",
+    numeroDoc:"37481033",
+    email:"erikaromanczuk@gmail.com",
+    contraseña:"1234",
+    direccion:"Direccion",
+    fechaNacimiento:"1990-01-12T00:00:00",
+    rol:'clasificador',
+    idNacionalidad:4,
+    idTipoDoc:1,
+    idGenero:2,
+    idProvincia:3
+}
 
-export default (state = initialState, action) => {
+export default (state = test, action) => {
     switch(action.type) {
         case SING_IN:
             return {
