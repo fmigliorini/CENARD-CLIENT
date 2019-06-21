@@ -15,13 +15,13 @@ class Stadistics extends Component {
   }
 
   render() {
-    const { role } = this.props;
+    const { rol } = this.props;
+    console.log(rol);
     return (
       <>
         <div className="container">
-          {role === "admin"
-            ? this.getStadisticComponent("tournament")
-            : this.getStadisticComponent("personal")}
+          {rol === "admin" && this.getStadisticComponent("tournament") }
+          {rol === "deportista" && this.getStadisticComponent("personal") }
         </div>
       </>
     );
