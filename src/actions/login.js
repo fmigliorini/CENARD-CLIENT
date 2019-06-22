@@ -13,7 +13,7 @@ export const loginAction = payload => {
 };
 
 export const login = (email, password) => {
-  return Api.post("/login", { email, password })
+  return Api.post("api/account/login", { email, password })
     .then(function(response) {
       console.log(response);
     })
@@ -32,8 +32,7 @@ export const getUserLoggedAction = userId => {
 };
 
 export const getUserLogged = userId => {
-  console.log('asdasd');
-  return Api.post("/usuario/" + userId)
+  return Api.post("/api/Usuario/ObtenerPorId/" + userId)
     .then(function(response) {
       console.log(response);
     })
