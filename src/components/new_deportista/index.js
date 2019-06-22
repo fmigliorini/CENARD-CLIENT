@@ -1,3 +1,3 @@
-import new_deportista from "./list_deportista";
+import new_deportista from "./new_deportista";
 
 export default new_deportista;
