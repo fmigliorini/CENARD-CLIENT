@@ -4,38 +4,54 @@ const new_clasificador = () => {
   return (
     <>
   <br/>
-<div class="jumbotron">
-<div class="row">
-<h2>Nuevo clasificador</h2>
+<div className="jumbotron col-6 offset-3">
+<div className="row">
+    <h2>Nuevo clasificador</h2>
 
-<form>
-  <div class="form-group row">
-    <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="Nombre" placeholder="Nombre" />
+<form className="col-12">
+<br/>
+
+  <div className="form-group row">
+    <label htmlFor="Nombre" className="col-sm-4 col-form-label">Nombre</label>
+    <div className="col-sm-8">
+      <input type="text" className="form-control" id="Nombre" placeholder="Nombre" />
     </div>
   </div>
 
-  <div class="form-group row">
-    <label for="Apellido" class="col-sm-2 col-form-label">Apellido</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="Apellido" placeholder="Apellido" />
+  <div className="form-group row">
+    <label htmlFor="Apellido" className="col-sm-4 col-form-label">Apellido</label>
+    <div className="col-sm-8">
+      <input type="text" className="form-control" id="Apellido" placeholder="Apellido" />
     </div>
   </div>
 
-  <fieldset class="form-group">
-    <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Posibilidad de viajar</legend>
-      <div class="col-sm-10">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="Viaja" id="Viaja1" value="option1" checked />
-          <label class="form-check-label" for="Viaja1">
+  <div className="form-group row">
+    <label htmlFor="Email" className="col-sm-4 col-form-label">Email</label>
+    <div className="col-sm-8">
+      <input type="email" className="form-control" id="Email" placeholder="Email" />
+    </div>
+  </div>
+
+  <div className="form-group row">
+    <label htmlFor="FechaNac" className="col-sm-4 col-form-label">Fecha de Nacimiento</label>
+    <div className="col-sm-4">
+      <input type="date" className="form-control" id="FechaNac" />
+    </div>
+  </div>
+
+  <fieldset className="form-group">
+    <div className="row">
+      <legend className="col-form-label col-sm-4 pt-0">Posibilidad de viajar</legend>
+      <div className="col-sm-8">
+        <div className="form-check">
+          <input className="form-check-input" type="radio" name="Viaja" id="Viaja1" value="si"  />
+          <label className="form-check-label" htmlFor="Viaja1">
             Si
           </label>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="Viaja" id="Viaja2" value="option2" />
-          <label class="form-check-label" for="Viaja2">
+        <div className="form-check">
+          <input className="form-check-input" type="radio" name="Viaja" id="Viaja2" value="no" />
+          <label className="form-check-label" htmlFor="Viaja2">
             No
           </label>
         </div>
@@ -43,26 +59,46 @@ const new_clasificador = () => {
     </div>
   </fieldset>
 
-  <div class="form-group row">
-    <div class="col-sm-2">Tipo de clasificador</div>
-    <div class="col-sm-10">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="TipoClasificacion" />
-        <label class="form-check-label" for="TipoClasificacion">
+  <fieldset className="form-group">
+    <div className="row">
+      <legend className="col-form-label col-sm-4 pt-0">Licencia Internacional</legend>
+      <div className="col-sm-8">
+        <div className="form-check">
+          <input className="form-check-input" type="radio" name="Licencia" id="Licencia" value="si"  />
+          <label className="form-check-label" htmlFor="Licencia1">
+            Si
+          </label>
+        </div>
+        <div className="form-check">
+          <input className="form-check-input" type="radio" name="Licencia" id="Licencia2" value="no" />
+          <label className="form-check-label" htmlFor="Licencia2">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <div className="form-group row">
+    <div className="col-sm-4 col-form-label">Tipo de clasificador</div>
+    <div className="col-sm-8">
+      <div className="form-check">
+        <input className="form-check-input" type="checkbox" id="TipoClasificacion" />
+        <label className="form-check-label" htmlFor="TipoClasificacion">
           Clasificador de Campo
         </label>
       </div>
 
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="TipoClasificacion" />
-        <label class="form-check-label" for="TipoClasificacion">
+      <div className="form-check">
+        <input className="form-check-input" type="checkbox" id="TipoClasificacion" />
+        <label className="form-check-label" htmlFor="TipoClasificacion">
         Clasificador de Pista
         </label>
       </div>
 
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="TipoClasificacion" />
-        <label class="form-check-label" for="TipoClasificacion">
+      <div className="form-check">
+        <input className="form-check-input" type="checkbox" id="TipoClasificacion" />
+        <label className="form-check-label" htmlFor="TipoClasificacion">
         Clasificador de deportes acuaticos
         </label>
       </div>
@@ -72,11 +108,13 @@ const new_clasificador = () => {
 
 
 
-  <div class="form-group row">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Agregar</button>
+  <div className="form-group row">
+    <div className="col-sm-8">
+      <button type="submit" className="btn btn-primary">Agregar</button>
     </div>
   </div>
+
+
 </form>
 
 

@@ -43,7 +43,7 @@ class Events extends Component {
     return (
       <>
         <h2 className="text-center">Torneos</h2>
-        <table className="table table-bordered table-striped">
+        <table className="table table-bordered table-striped blanco">
           <thead>
             <tr>
               <th scope="col">#</th>

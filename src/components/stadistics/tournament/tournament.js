@@ -52,10 +52,10 @@ class Tournament extends Component {
     return (
       <>
         <div className="row">
-          <div className="col-sm-6">
+          <div className="col-sm-6 tournament">
             <ParticipantPerTournament />
           </div>
-          <div className="col-sm-6">
+          <div className="col-sm-6 tournament">
             <ParticipantPerYear />
           </div>
         </div>

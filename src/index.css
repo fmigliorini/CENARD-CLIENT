@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.col-form-label {
+color: aliceblue;
+}
+
+.form-check-label{
+  color: aliceblue;
+}
+
+.blanco{
+  color: aliceblue;
+}
